@@ -360,7 +360,10 @@ public final class TGALoader implements AssetLoader {
                 }
             }
             format = Format.RGBA8;
-        } else if (pixelDepth == 24) {
+        }
+    }
+    public static Image loadTrueColorRLE2() throws IOException {
+        if (pixelDepth == 24) {
             for (int i = 0; i <= (height - 1); i++) {
                 if (!flip) {
                     rawDataIndex = (height - 1 - i) * width * dl;
@@ -394,8 +397,11 @@ public final class TGALoader implements AssetLoader {
                     }
                 }
             }
-            format = Format.RGB8;
-        } else if (pixelDepth == 16) {
+            format = Format.RGB8;\
+        }
+    }
+    public static Image loadTrueColorRLE3() throws IOException {
+        if (pixelDepth == 16) {
             byte[] data = new byte[2];
             float scalar = 255f / 31f;
             for (int i = 0; i <= (height - 1); i++) {
