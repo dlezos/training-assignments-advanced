@@ -154,6 +154,8 @@ public final class TGALoader implements AssetLoader {
         }
 
         // ---------- Done Reading the TGA header ---------- //
+    }
+    public static Image load2(InputStream in, boolean flip) throws IOException {
 
         // Skip image ID
         if (idLength > 0) {
@@ -193,6 +195,8 @@ public final class TGALoader implements AssetLoader {
             }
         }
 
+    }
+    public static Image load3(InputStream in, boolean flip) throws IOException {
 
         // Allocate image data array
         Format format;
